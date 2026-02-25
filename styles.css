@@ -14,7 +14,7 @@
 }
 
 .intro-typing {
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: white;
   white-space: nowrap;
@@ -110,7 +110,7 @@ body {
 .hero {
   min-height: 100vh;
   position: relative;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .hero-image img {
@@ -125,7 +125,7 @@ body {
 
 /* 1. Change the wrapper alignment */
 .content-wrapper {
-  padding: 180px 0% 80px;
+  padding: 180px 10% 80px;
   max-width: 1500px;
   margin: 0 auto;
   text-align: left; /* Changed from center to left */
@@ -338,6 +338,10 @@ body {
     margin-top: 1rem;
     gap: 1.5rem;
   }
+
+  .hero {
+    height: 230vh;
+  }
   .hero h1 {
     font-size: 2.8rem;
   }
@@ -347,7 +351,7 @@ body {
   .hero-image picture img {
     object-fit: fill; /* Stretches the image to fit the container */
     width: 100%;
-    height: 106vh;
+    height: 100%;
     display: block;
   }
 }
