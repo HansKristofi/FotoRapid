@@ -340,7 +340,7 @@ body {
   }
 
   .hero {
-    height: 190vh;
+    height: auto; /* Allow the hero to grow in height on mobile */
   }
   .hero h1 {
     font-size: 2.8rem;
@@ -496,4 +496,3 @@ body {
   transform: translateY(0);
   opacity: 1;
 }
-
