@@ -481,6 +481,40 @@ body {
   .opening-hours {
     display: inline-block; /* Keeps the box from stretching full-width while centered */    /* Optional: keeps the text INSIDE the box left-aligned */
     }
+    .opening-hours {
+    display: block;          /* Changed from inline-block for easier centering */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 90%;             /* Adjusts to screen size */
+    max-width: 380px;       /* Prevents it from getting too wide on tablets */
+    padding: 1.5rem;
+    box-sizing: border-box; /* Ensures padding doesn't break the width */
+  }
+
+  .opening-hours h3 {
+    text-align: center;     /* Centers the "Opening Hours" title */
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  .opening-hours table {
+    width: 100%;            /* Table fills the dark container */
+    margin: 0 auto;
+  }
+
+  .opening-hours td {
+    padding: 0.6rem 0;      /* Vertical spacing between rows */
+    font-size: 0.95rem;
+    color: #ffffff;
+    text-align: left;       /* Day names stay left-aligned */
+  }
+
+  /* Target the second column (the times) */
+  .opening-hours td:last-child {
+    text-align: right;      /* Times align to the right edge */
+    color: #ffffff;            /* Slight dimming for visual hierarchy */
+    font-variant-numeric: tabular-nums; /* Keeps numbers aligned vertically */
+  }
 }
 
 /* Optional nice touch: menu slide-down animation */
