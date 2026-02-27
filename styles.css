@@ -1,0 +1,797 @@
+/* Intro Overlay Styles */
+#intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #111; /* Dark background like your image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Higher than navbar */
+  transition: opacity 1s ease, visibility 1s;
+}
+
+.intro-typing {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #ffffff; 
+  width: 0;
+  margin: 0 auto;
+  
+  /* Use ch unit for perfect character alignment */
+  animation: 
+    typing-intro 1.0s steps(16) forwards; 
+}
+
+@keyframes typing-intro {
+  from { width: 0; }
+  /* Exactly 17 characters wide */
+  to { width: 16ch; } 
+}
+
+/* Cursor Blink */
+@keyframes blink-intro {
+  50% { border-color: transparent; }
+}
+
+/* Class to hide the overlay */
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ── Despre noi ── */
+.despre-section {
+  padding: 90px 5%;
+  background: #111;
+  color: #fff;
+}
+
+.despre-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.despre-text h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.4rem;
+  color: #fff;
+}
+
+.despre-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.despre-stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 0.2rem;
+}
+
+/* ── Album price tag ── */
+.album-price {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  margin-top: 0.3rem;
+  font-weight: 400;
+}
+
+/* ── Service Modal ── */
+.service-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.service-modal.hidden {
+  display: none;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+}
+
+.modal-card {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: 1.8rem 2rem 2rem;
+}
+
+.modal-body h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: #111;
+}
+
+.modal-body p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.modal-price {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+.modal-cta {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+  margin-left: 0.8rem;
+}
+
+.modal-cta:hover {
+  background: #20b358;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 1.8rem;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  z-index: 10;
+}
+
+/* ── Reviews ── */
+.reviews-section {
+  padding: 90px 5%;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 2.4rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.google-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.google-rating .stars {
+  color: #fbbc04;
+  font-size: 1.3rem;
+}
+
+.rating-text {
+  font-size: 1.05rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+  text-align: left;
+}
+
+.review-stars {
+  color: #fbbc04;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.review-card p {
+  color: #444;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.reviewer {
+  font-size: 0.88rem;
+  color: #888;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .despre-stats {
+    gap: 1.8rem;
+  }
+  .stat-number {
+    font-size: 1.9rem;
+  }
+  .opening-hours td {
+    font-size: 1.05rem;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f9f9f9;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.85);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+.logo a {
+  display: flex;         /* Maintains the alignment of the image */
+  text-decoration: none; /* Removes any accidental underlines */
+  outline: none;         /* Removes the focus box when clicked */
+}
+
+.logo img {
+  height: 50px;          /* Keep your existing height */
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease; /* Optional: smooth hover effect */
+}
+
+/* Optional: slight zoom effect when hovering the logo */
+.logo a:hover img {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #5a5a5a;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  color: rgb(0, 0, 0);
+}
+
+.hero-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(1);
+}
+
+/* 1. Change the wrapper alignment */
+.content-wrapper {
+  padding: 180px 10% 80px;
+  max-width: 1500px;
+  margin: 0 auto;
+  text-align: left; /* Changed from center to left */
+}
+
+/* 2. Remove the auto-margins from the specific elements */
+.content-wrapper h1,
+.content-wrapper h2,
+.content-wrapper h3,
+.content-wrapper p,
+.content-wrapper .lead,
+.content-wrapper .opening-hours {
+  width: fit-content;
+  margin-left: 0;   /* Changed from auto to 0 */
+  margin-right: 0;  /* Changed from auto to 0 */
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.lead {
+  font-size: 1.35rem;
+  max-width: 700px;
+  margin-bottom: 2.5rem;
+}
+
+.opening-hours {
+  background: rgba(41, 41, 41, 0.95);
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  display: inline-block;
+  max-width: 420px;
+}
+
+.opening-hours h3 {
+  margin-bottom: 1.2rem;
+  color: #ffffff;
+}
+
+.opening-hours table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.opening-hours td {
+  padding: 0.6rem 1.2rem 0.6rem 0;
+}
+
+/* Galerie */
+.gallery-section {
+  padding: 100px 5%;
+  background: white;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  margin-bottom: 3rem;
+  font-size: 2.6rem;
+  color: #222;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.album {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.album:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+}
+
+.album img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1.8rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+#lightbox-img {
+  max-width: 96%;
+  max-height: 94vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 3.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Locație */
+.location-section {
+  padding: 80px 5%;
+  background: #f0f4f8;
+  text-align: center;
+}
+
+.location-section h2 {
+  margin-bottom: 2.5rem;
+}
+
+.location-section p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+.map-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* Contact */
+.contact-section {
+  padding: 100px 5%;
+  background: #222;
+  color: white;
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 2.5rem;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #25D366;
+  color: white;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  margin: 1.5rem 0;
+  transition: all 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background: #20b358;
+  transform: translateY(-3px);
+}
+
+.whatsapp-btn i {
+  font-size: 2.2rem;
+}
+
+.phone {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .nav-links {
+    margin-top: 1rem;
+    gap: 1.5rem;
+  }
+
+  
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .content-wrapper {
+    padding: 140px 6% 60px;
+  }
+  .hero-image picture img {
+    object-fit: cover; /* Stretches the image to fit the container */
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+/* ────────────────────────────────────────
+   Hamburger Menu
+───────────────────────────────────────── */
+
+/* Hide checkbox visually but keep it functional */
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon container */
+.hamburger {
+  display: none;                    /* hidden by default (desktop) */
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+  position: relative;
+}
+
+/* Show bars icon, hide times by default */
+.hamburger .fa-bars {
+  display: block;
+}
+.hamburger .fa-times {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* When menu is open → swap icons */
+#menu-toggle:checked + .hamburger .fa-bars {
+  display: none;
+}
+#menu-toggle:checked + .hamburger .fa-times {
+  display: block;
+}
+
+/* Mobile vertical menu */
+.nav-mobile {
+  display: none;                    /* hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.nav-mobile li {
+  margin: 1.2rem 0;
+}
+
+.nav-mobile a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0.8rem 2rem;
+  display: block;
+  transition: background 0.3s;
+}
+
+.nav-mobile a:hover,
+.nav-mobile a:focus {
+  background: rgba(255,255,255,0.1);
+}
+
+/* When checkbox is checked → show mobile menu */
+#menu-toggle:checked ~ .nav-mobile {
+  display: block;
+}
+
+/* ────────────────────────────────────────
+   Responsive rules (update your existing media query)
+───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .navbar {
+    /* Change from column to row to keep them on the same line */
+    flex-direction: row; 
+    /* This pushes the logo to the left and hamburger to the right */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1rem 5%;
+    /* Ensure the navbar doesn't grow taller than needed */
+    height: auto; 
+  }
+
+  .nav-links {
+    display: none; /* Keep desktop links hidden */
+  }
+
+  .hamburger {
+    display: block; /* Ensure the icon is visible */
+    /* Remove any default margins that might shift it */
+    margin: 0; 
+  }
+
+  .logo {
+    /* Ensure the logo doesn't take up 100% width */
+    width: auto; 
+  }
+  .content-wrapper {
+    text-align: left; /* Centers inline elements like the text */
+    padding: 140px 5% 60px; /* Adjust padding for mobile */
+  }
+
+  .content-wrapper h1,
+  .content-wrapper h2,
+  .content-wrapper h3,
+  .content-wrapper p,
+  .content-wrapper .lead,
+  .content-wrapper .opening-hours {
+    margin-left: auto;  /* Combined with margin-right: auto, */
+    margin-right: auto; /* this centers the block elements */
+    width: 100%;        /* Allows the text to use full width for centering */
+  }
+
+  .opening-hours {
+    display: inline-block; /* Keeps the box from stretching full-width while centered */    /* Optional: keeps the text INSIDE the box left-aligned */
+    }
+    .opening-hours {
+    display: block;          /* Changed from inline-block for easier centering */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 90%;             /* Adjusts to screen size */
+    max-width: 380px;       /* Prevents it from getting too wide on tablets */
+    padding: 1.5rem;
+    box-sizing: border-box; /* Ensures padding doesn't break the width */
+  }
+
+  .opening-hours h3 {
+    text-align: center;     /* Centers the "Opening Hours" title */
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  .opening-hours table {
+    width: 100%;            /* Table fills the dark container */
+    margin: 0 auto;
+  }
+
+  .opening-hours td {
+    padding: 0.6rem 0;      /* Vertical spacing between rows */
+    font-size: 0.95rem;
+    color: #ffffff;
+    text-align: left;       /* Day names stay left-aligned */
+  }
+
+  /* Target the second column (the times) */
+  .opening-hours td:last-child {
+    text-align: right;      /* Times align to the right edge */
+    color: #ffffff;            /* Slight dimming for visual hierarchy */
+    font-variant-numeric: tabular-nums; /* Keeps numbers aligned vertically */
+  }
+}
+
+/* Optional nice touch: menu slide-down animation */
+.nav-mobile {
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+#menu-toggle:checked ~ .nav-mobile {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* Hidden by default – shown only on mobile */
+.camera-after-hours {
+  display: none;
+  margin: 2rem auto 1rem;       /* space above + below + centered */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reveal and fine-tune on mobile */
+@media (max-width: 768px) {
+  .camera-after-hours {
+    display: block;
+    max-width: 320px;           /* ← adjust this value to taste: 280px–360px usually looks good */
+  }
+}
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    padding: 0.9rem 1.8rem;          /* reduced padding */
+    font-size: 1.15rem;               /* smaller text */
+    gap: 10px;                        /* slightly tighter icon-text spacing */
+    border-radius: 50px;              /* keep pill shape or reduce to 999px if you want even rounder */
+    max-width: 280px;                 /* optional: prevents it from stretching full-width on very small screens */
+    margin: 1.2rem auto;              /* centers it nicely if needed */
+  }
+
+  .whatsapp-btn i {
+    font-size: 1.8rem;                /* slightly smaller icon */
+  }
+}
